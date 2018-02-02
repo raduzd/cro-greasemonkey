@@ -16,6 +16,7 @@
 var playitems = document.getElementsByClassName("sm2-col sm2-wide");
 var download_name;
 for (i=0; i < playitems.length; i++) {
+    download_name = playitems[i].innerText.replace(/(\r\n|\n|\r)/gm," ");
     var audio_filename = playitems[i].childNodes[1].href.split("?")[0];
     var downlink = document.createElement("a");
     downlink.href = audio_filename;
