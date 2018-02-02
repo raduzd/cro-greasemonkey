@@ -14,10 +14,12 @@
 // ==/UserScript==
 
 var playitems = document.getElementsByClassName("sm2-col sm2-wide");
+var download_name;
 for (i=0; i < playitems.length; i++) {
     var audio_filename = playitems[i].childNodes[1].href.split("?")[0];
     var downlink = document.createElement("a");
     downlink.href = audio_filename;
+    downlink.download = download_name;
     downlink.appendChild(document.createTextNode("Stáhnout..."));
     var anchorplayer = document.getElementsByClassName("bd sm2-main-controls")[i]
     anchorplayer.parentNode.insertBefore(downlink, anchorplayer.nextSibling);
